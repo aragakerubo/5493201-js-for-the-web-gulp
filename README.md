@@ -4,7 +4,7 @@ Clone this repo and add Gulp tasks as set out in the course activity.
 ## Getting started
  - Clone the repo
 ```bash
-git clone 
+git clone https://github.com/aragakerubo/5493201-js-for-the-web-gulp.git
 ```
 
  - Install the package
