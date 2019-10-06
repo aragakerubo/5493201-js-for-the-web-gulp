@@ -77,8 +77,8 @@ gulp.task(
     gulp.watch("*.js", ["processJS"]);
     gulp.watch("*.html", ["processHTML"]);
 
-    gulp.watch("dist/*.js", browserSync.reload);
-    gulp.watch("dist/*.html", browserSync.reload);
+    gulp.watch("dist/*.js").on("change", browserSync.reload);
+    gulp.watch("dist/*.html").on("change", browserSync.reload);
   })
 );
 
