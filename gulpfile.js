@@ -61,7 +61,7 @@ gulp.task(
   })
 );
 
-gulp.task("browserSync", () => {
+gulp.task("browserSync", cb => {
   browserSync.init({
     server: "./dist",
     port: process.env.PORT || 8080,
@@ -69,13 +69,14 @@ gulp.task("browserSync", () => {
       port: process.env.PORT || 8081
     }
   });
+  cb();
 });
 
 gulp.task(
   "watch",
   gulp.series("browserSync", () => {
-    gulp.watch("*.js", ["processJS"]);
-    gulp.watch("*.html", ["processHTML"]);
+    gulp.watch("*.js", gulp.series("processJS"));
+    gulp.watch("*.html", gulp.series("processHTML"));
 
     gulp.watch("dist/*.js").on("change", browserSync.reload);
     gulp.watch("dist/*.html").on("change", browserSync.reload);
