@@ -18,3 +18,9 @@ gulp
 ```
 
  - And voila! Make changes and watch them update in real time.
+ 
+ # NB
+ Make sure you already have gulp installed globally. For macs/ linux add the ```sudo``` command incase of write access errors.
+ ```bash
+ npm install -g gulp-cli
+ ```
